@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4 col-md-offset-2">
+      <app-new-account
+      (serverAdded)="updateAccounts()">
+      </app-new-account>
+    </div>
+    <div class="col-xs-4">
+      <app-account
+        *ngFor="let acc of accounts; let i = index"
+        [account]="acc"
+        (statusChanged)="onStatusChanged($event)"></app-account>
+       <h1>Front-End Topics</h1>
+      <app-topic
+        *ngFor="let topic of FrontEndTopics"
+        [Name]="topic"
+      ></app-topic>
+
+      <h1>Back-End Topics</h1>
+      <app-topic
+        *ngFor="let topic of BackEndTopics"
+        [Name]="topic"
+      ></app-topic>
+
+      <h1>DevOps Topics</h1>
+      <app-topic
+        *ngFor="let topic of DevOpsTopics"
+        [Name]="topic"
+      ></app-topic>
+    </div>
+  </div>
+</div>
+<!-- col-md-8 col-md-offset-2-->
